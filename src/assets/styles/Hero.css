@@ -1,0 +1,43 @@
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  background-color: var(--olive-green);
+  color: var(--white);
+  padding: 100px 6rem;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-text h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--lemon-yellow);
+  margin-bottom: 0.5rem;
+}
+
+.hero-text h2 {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 450px;
+}
+
+.hero-image {
+  background-color: #ccc;
+  height: clamp(250px, 40vw, 360px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 1.5rem;
+  }
+}
