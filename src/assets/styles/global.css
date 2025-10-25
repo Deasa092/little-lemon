@@ -106,6 +106,13 @@ header footer section {
   background-color: var(--white);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
+.error-text {
+  color: #d93025;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
 
 /* --- Responsive --- */
 @media (max-width: 768px) {

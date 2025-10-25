@@ -66,6 +66,7 @@
 @media (max-width: 768px) {
   .footer {
     padding: 60px 2rem 30px;
+    text-align: center;
   }
 
   .footer-container {
@@ -75,7 +76,9 @@
   .footer-logo {
     text-align: center;
   }
-
+  .footer-logo img {
+    width: 50px;
+  }
   .footer-copy {
     margin-top: 40px;
   }
