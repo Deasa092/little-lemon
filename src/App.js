@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import HomePage from "./pages/Home";
 import AboutPage from "./pages/About";
 import ReservationPage from "./pages/Reservation";
+import "./assets/styles/global.css";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/reservations" element={<ReservationPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

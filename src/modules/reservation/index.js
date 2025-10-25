@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import BookingForm from "./BookingForm";
 
-function index() {
+function Reservation() {
   return (
-    <div>index</div>
-  )
+    <div>
+      <BookingForm />
+    </div>
+  );
 }
 
-export default index
+export default Reservation;

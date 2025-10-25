@@ -1,12 +1,5 @@
-:root {
-  --lemon-yellow: #f4ce14;
-  --olive-green: #495e57;
-  --white: #ffffff;
-}
 
-/* ===== HEADER WRAPPER ===== */
 .header {
-  width: 100%;
   background-color: var(--white);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   position: sticky;
@@ -16,9 +9,8 @@
 
 /* ===== FLEX CONTAINER ===== */
 .header-container {
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 3rem;
+  padding: 2rem 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,10 +52,6 @@
   color: var(--olive-green);
   cursor: pointer;
   transition: color 0.3s ease, border-bottom 0.3s ease;
-}
-
-.nav-links li:hover {
-  border-bottom: 3px solid var(--lemon-yellow);
 }
 
 /* ===== MENU TOGGLE ===== */
@@ -139,6 +127,9 @@
     border-bottom: 1px solid #eee;
   }
 
+.nav-links li:hover {
+  border-bottom: 1px solid var(--lemon-yellow);
+}
 
   .header-container {
     padding: 1rem 1.5rem;

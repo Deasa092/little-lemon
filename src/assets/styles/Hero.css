@@ -1,43 +1,101 @@
+/* ===============================
+   HERO SECTION — LITTLE LEMON
+   =============================== */
+
 .hero {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 100px 6rem;
   background-color: var(--olive-green);
   color: var(--white);
-  padding: 100px 6rem;
-  align-items: center;
-  gap: 50px;
 }
 
+/* --- Text Area --- */
 .hero-text h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
   color: var(--lemon-yellow);
-  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
 }
 
 .hero-text h2 {
   font-size: clamp(1.2rem, 2.5vw, 1.6rem);
   font-weight: 400;
-  margin-bottom: 1rem;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  opacity: 0.9;
+}
+
+.hero-text h2 {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 400;
+  color: var(--text-gray)
 }
 
 .hero-text p {
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1rem;
+  color: var(--white);
+  opacity: 0.95;
+  max-width: 480px;
+  margin-top: 0.5rem;
   margin-bottom: 1.5rem;
-  max-width: 450px;
 }
 
+/* --- Image Area --- */
 .hero-image {
-  background-color: #ccc;
-  height: clamp(250px, 40vw, 360px);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: 16px;
+  overflow: hidden;
+  height: clamp(420px, 35vw, 380px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  background-color: var(--white);
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: transform 0.5s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.03);
+}
+
+button {
+   width: 300px;
+  font-size: 18px;
+}
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 80px 3rem;
+    gap: 40px;
+  }
 }
 
 @media (max-width: 768px) {
   .hero {
     padding: 60px 1.5rem;
+    text-align: center;
+  }
+
+  .hero-text {
+    align-items: center;
+  }
+
+  .hero-text p {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    height: 280px;
   }
 }

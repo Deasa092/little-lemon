@@ -1,9 +1,13 @@
 :root {
   --lemon-yellow: #f4ce14;
   --olive-green: #495e57;
+  --secondary-color: #ee9972;
   --white: #ffffff;
+  --gray-light: #edefee;
+  --text-dark: #333333;
 }
 
+/* --- Base Layout --- */
 html, body {
   height: 100%;
   margin: 0;
@@ -11,6 +15,8 @@ html, body {
   flex-direction: column;
   background-color: var(--white);
   font-family: "Poppins", sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
 #root {
@@ -19,7 +25,52 @@ html, body {
   flex-direction: column;
 }
 
-/* Button Utilities */
+/* --- Headings --- */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  color: var(--olive-green);
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--lemon-yellow);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Paragraph --- */
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* --- Links --- */
+a {
+  text-decoration: none;
+  color: var(--olive-green);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--lemon-yellow);
+}
+
+/* --- Button Utilities --- */
 .btn-primary {
   background-color: var(--lemon-yellow);
   color: var(--olive-green);
@@ -33,6 +84,7 @@ html, body {
 
 .btn-primary:hover {
   background-color: #e3bd00;
+ text-decoration: underline;
 }
 
 .btn-link {
@@ -46,4 +98,26 @@ html, body {
 
 .btn-link:hover {
   text-decoration: underline;
+}
+
+/* --- Section --- */
+header footer section {
+  padding: 60px 100px;
+  background-color: var(--white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  section {
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
 }

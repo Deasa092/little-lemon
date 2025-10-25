@@ -1,36 +1,34 @@
-/* ===== ABOUT SECTION ===== */
 .about {
-  padding: 100px 6rem;
-  display: flex;
-  justify-content: center;
   background-color: var(--white);
+  padding: 100px 5rem;
 }
 
 .about-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   align-items: center;
-  gap: 3rem;
-  max-width: 1200px;
-  width: 100%;
+  gap: 40px; 
 }
 
 .about-text h2 {
-  font-size: clamp(2rem, 5vw, 2.6rem);
+  font-size: 2.4rem;
+  font-weight: 700;
   color: var(--olive-green);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 .about-text h3 {
-  font-size: 1.2rem;
-  color: #777;
-  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
 .about-text p {
-  line-height: 1.6;
+  font-size: 1rem;
   color: #444;
-  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
 .about-images {
@@ -40,31 +38,70 @@
   align-items: center;
 }
 
-.img-small,
-.img-large {
-  background-color: #ccc;
-  border-radius: 10px;
-  color: #555;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
+/* 🔹 Ukuran gambar di desktop */
+.about-images .img-large img {
+  width: 360px; /* 🔽 sedikit lebih kecil supaya proporsional */
+  height: 430px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-.img-small {
-  width: 200px;
-  height: 240px;
-  position: relative;
-  z-index: 1;
-  transform: translateX(-40px);
+.about-images .img-small {
+  position: absolute;
+  bottom: -35px;
+  right: -35px;
 }
 
-.img-large {
-  width: 200px;
+.about-images .img-small img {
+  width: 230px;
   height: 240px;
-  position: relative;
-  z-index: 2;
-  top: 40px;
-  left: 0;
-  transform: translateX(40px);
+  border-radius: 16px;
+  object-fit: cover;
+  border: 4px solid var(--white);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* Hover effect */
+.about-images img:hover {
+  transform: scale(1.03);
+  transition: 0.3s ease;
+}
+
+/* 🔸 Responsif untuk layar ponsel */
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 2rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 25px; /* 🔽 lebih rapat di mobile */
+  }
+
+  .about-images {
+    flex-direction: column;
+    position: relative;
+    gap: 20px;
+  }
+
+  .about-images .img-small {
+    position: static;
+    margin: 0;
+  }
+
+  .about-images .img-large img,
+  .about-images .img-small img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+  }
+
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-text h3 {
+    font-size: 1.2rem;
+  }
 }

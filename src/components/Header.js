@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import logo from "../assets/images/logo.jpg";
 import "../assets/styles/Header.css";
 import { Link } from "react-router-dom";
+import { logo } from "../assets/constants/listImage";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,8 +10,9 @@ function Header() {
     <header className="header">
       <div className="header-container">
         {/* Logo */}
-        <img className="logo" src={logo} alt="Little Lemon Logo" />
-
+        <Link to="/" onClick={() => setMenuOpen(false)}>
+          <img className="logo" src={logo} alt="Little Lemon Logo" />
+        </Link>
         {/* Hamburger Icon */}
         <div
           className={`menu-toggle ${menuOpen ? "open" : ""}`}
@@ -45,8 +46,16 @@ function Header() {
                 Reservations
               </Link>
             </li>
-            <li>Order Online</li>
-            <li>Login</li>
+            <li>
+              <Link to="/order-online" onClick={() => setMenuOpen(false)}>
+                Order Online
+              </Link>
+            </li>
+            <li>
+              <Link to="/login" onClick={() => setMenuOpen(false)}>
+                Login
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
