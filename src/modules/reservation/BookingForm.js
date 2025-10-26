@@ -1,104 +1,127 @@
 import React, { useState } from "react";
 import "../../assets/styles/BookingForm.css";
+import SuccessPopup from "../../components/PopupSuccess";
+/* eslint-disable react/prop-types */
 
-function BookingForm() {
-  const [formData, setFormData] = useState({
-    date: "",
-    time: "",
-    guests: "",
-    occasion: "",
-  });
+const submitAPI = function (formData) {
+  console.log("✅ Data dikirim ke API simulasi:", formData);
+  return true;
+};
 
-  const [submitted, setSubmitted] = useState(false);
+function BookingForm({ formData, setFormData }) {
+  const [errors, setErrors] = useState({});
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
+    setErrors({ ...errors, [name]: "" });
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.firstName) newErrors.firstName = "First name is required";
+    if (!formData.lastName) newErrors.lastName = "Last name is required";
+    if (!formData.phone) newErrors.phone = "Phone number is required";
+    if (!formData.email) newErrors.email = "Email is required";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Data reservasi:", formData);
-    setSubmitted(true);
-    // Reset form (opsional)
-    setFormData({
-      date: "",
-      time: "",
-      guests: "",
-      occasion: "",
-    });
+    if (validate()) {
+      const success = submitAPI(formData);
+      if (success) {
+        setShowSuccess(true);
+      }
+    }
   };
 
   return (
-    <div className="booking-container">
-      <form className="booking-form" onSubmit={handleSubmit}>
-        <h2 className="form-title">Make a Reservation</h2>
+    <>
+      <form onSubmit={handleSubmit} className="booking-form">
+        <h2 className="form-title">Reserve a Table</h2>
 
-        <label htmlFor="res-date">Choose date</label>
-        <input
-          type="date"
-          id="res-date"
-          name="date"
-          value={formData.date}
-          onChange={handleChange}
-          required
-        />
+        {/* First Name */}
+        <div className="form-group">
+          <label htmlFor="firstName">* First name</label>
+          <input
+            id="firstName"
+            name="firstName"
+            type="text"
+            value={formData.firstName}
+            onChange={handleChange}
+          />
+          {errors.firstName && (
+            <span className="error-text">{errors.firstName}</span>
+          )}
+        </div>
 
-        <label htmlFor="res-time">Choose time</label>
-        <select
-          id="res-time"
-          name="time"
-          value={formData.time}
-          onChange={handleChange}
-          required
-        >
-          <option value="">-- Select time --</option>
-          <option>17:00</option>
-          <option>18:00</option>
-          <option>19:00</option>
-          <option>20:00</option>
-          <option>21:00</option>
-          <option>22:00</option>
-        </select>
+        {/* Last Name */}
+        <div className="form-group">
+          <label htmlFor="lastName">* Last name</label>
+          <input
+            id="lastName"
+            name="lastName"
+            type="text"
+            value={formData.lastName}
+            onChange={handleChange}
+          />
+          {errors.lastName && (
+            <span className="error-text">{errors.lastName}</span>
+          )}
+        </div>
 
-        <label htmlFor="guests">Number of guests</label>
-        <input
-          type="number"
-          id="guests"
-          name="guests"
-          placeholder="1"
-          min="1"
-          max="10"
-          value={formData.guests}
-          onChange={handleChange}
-          required
-        />
+        {/* Phone Number */}
+        <div className="form-group">
+          <label htmlFor="phone">* Phone Number</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            value={formData.phone}
+            onChange={handleChange}
+          />
+          {errors.phone && <span className="error-text">{errors.phone}</span>}
+        </div>
 
-        <label htmlFor="occasion">Occasion</label>
-        <select
-          id="occasion"
-          name="occasion"
-          value={formData.occasion}
-          onChange={handleChange}
-          required
-        >
-          <option value="">-- Select occasion --</option>
-          <option>Birthday</option>
-          <option>Anniversary</option>
-        </select>
+        {/* Email */}
+        <div className="form-group">
+          <label htmlFor="email">* Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          {errors.email && <span className="error-text">{errors.email}</span>}
+        </div>
 
-        <input type="submit" value="Make Your Reservation" className="submit-btn" />
+        {/* Special Request */}
+        <div className="form-group">
+          <label htmlFor="specialRequest">Add a special request (optional)</label>
+          <textarea
+            id="specialRequest"
+            name="specialRequest"
+            value={formData.specialRequest}
+            onChange={handleChange}
+            placeholder="Any special notes for your booking..."
+          ></textarea>
+        </div>
+
+        <button type="submit" className="btn-primary">
+          Book a Table
+        </button>
       </form>
 
-      {submitted && (
-        <p className="success-message">
-          🎉 Reservation successfully submitted! We'll contact you soon.
-        </p>
-      )}
-    </div>
+      <SuccessPopup
+        show={showSuccess}
+        message="Your booking was submitted successfully!"
+        onClose={() => setShowSuccess(false)}
+      />
+    </>
   );
 }
 

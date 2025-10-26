@@ -1,0 +1,118 @@
+/* Overlay full screen */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Popup box */
+.popup-container {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  width: 360px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  animation: popUp 0.25s ease-out;
+}
+
+/* Header */
+.popup-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* Icon */
+.popup-icon {
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+/* Title */
+.popup-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3a35; /* olive gelap */
+  margin: 0;
+}
+
+/* Message */
+.popup-message {
+  color: #4a4a4a;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0 0 20px;
+}
+
+/* Buttons area */
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Buttons */
+.btn {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Primary button (lemon yellow) */
+.btn-primary {
+  background-color: #f4ce14;
+  color: #2d3a35;
+  margin-top: 0;
+}
+
+.btn-primary:hover {
+  background-color: #e0bd0f;
+  text-decoration: underline;
+}
+
+/* Secondary button (olive green) */
+.btn-secondary {
+  background-color: #495e57;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #3d514b;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

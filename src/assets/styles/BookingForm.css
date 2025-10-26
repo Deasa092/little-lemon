@@ -1,76 +1,135 @@
+/* ====== Latar belakang hijau tua penuh ====== */
 .booking-container {
+  background-color: #4c6456; /* hijau tua */
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* form mulai dari atas */
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+/* ====== Kotak putih full form ====== */
+.booking-form {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 45px 40px;
+  width: 100%;
+  max-width: 480px;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ====== Judul form ====== */
+.form-title {
+  color: #3b4a3f;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  line-height: 1.3;
+}
+
+/* ====== Label dan input ====== */
+.form-group {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 40px 15px;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #fffef8;
-  min-height: 100vh;
+  margin-bottom: 18px;
 }
 
-.booking-form {
-  display: grid;
-  gap: 15px;
-  max-width: 300px;
-  width: 100%;
-  background: #fff;
-  padding: 25px 20px;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-title {
-  text-align: center;
-  color: #2e7d32;
-  margin-bottom: 10px;
-  font-size: 1.3rem;
-}
-
-label {
+.form-group label {
   font-weight: 600;
-  color: #333;
-}
-
-input[type="date"],
-input[type="number"],
-select {
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  color: #3b4a3f;
   font-size: 14px;
-  transition: all 0.2s ease;
+  margin-bottom: 6px;
 }
 
-input[type="date"]:focus,
-input[type="number"]:focus,
-select:focus {
-  border-color: #2e7d32;
-  box-shadow: 0 0 5px rgba(46, 125, 50, 0.3);
-  outline: none;
-}
-
-.submit-btn {
-  background-color: #2e7d32;
-  color: white;
-  border: none;
-  padding: 10px;
+/* ====== Input dan textarea ====== */
+input,
+textarea {
+  padding: 12px 14px;
   border-radius: 6px;
-  cursor: pointer;
+  border: 1.5px solid #d0d0d0;
   font-size: 15px;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
+  color: #333;
+  outline: none;
+  background-color: #fff;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  resize: none;
 }
 
-.submit-btn:hover {
-  background-color: #256728;
+input:focus,
+textarea:focus {
+  border-color: #4c6456;
+  box-shadow: 0 0 0 2px rgba(76, 100, 86, 0.15);
 }
 
-.success-message {
-  margin-top: 20px;
-  color: #2e7d32;
-  font-weight: bold;
-  text-align: center;
-  background-color: #e8f5e9;
-  padding: 10px 15px;
+/* ====== Password field dengan icon ====== */
+.password-group {
+  position: relative;
+}
+
+.password-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ====== Hint text ====== */
+.hint {
+  font-size: 13px;
+  color: #8c8c8c;
+  margin-top: 4px;
+}
+
+/* ====== Tombol utama ====== */
+.btn-primary {
+  width: 100%;
+  background-color: #f4ce14;
+  color: #3b4a3f;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 0;
+  border: none;
   border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.1s ease;
+  margin-top: 15px;
+}
+
+.btn-primary:hover {
+  background-color: #e2ba10;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* ====== Responsif untuk HP ====== */
+@media (max-width: 480px) {
+  .booking-container {
+    padding: 30px 15px;
+  }
+
+  .booking-form {
+    padding: 30px 25px;
+    box-shadow: none; /* biar ringan di mobile */
+  }
+
+  .form-title {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .btn-primary {
+    font-size: 15px;
+  }
 }
