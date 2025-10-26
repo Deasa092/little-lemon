@@ -1,3 +1,11 @@
+# Environment
+
+Node.js version: 23.5.0
+
+npm version: (run npm -v to check)
+
+This project was built and tested using Node.js v23.5.0.
+It’s recommended to use the same version (or a compatible LTS version) to ensure consistent behavior across environments. 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
