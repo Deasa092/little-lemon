@@ -1,0 +1,107 @@
+.about {
+  background-color: var(--white);
+  padding: 100px 5rem;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: center;
+  gap: 40px; 
+}
+
+.about-text h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--olive-green);
+  margin-bottom: 0.5rem;
+}
+
+.about-text h3 {
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.about-images {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔹 Ukuran gambar di desktop */
+.about-images .img-large img {
+  width: 360px; /* 🔽 sedikit lebih kecil supaya proporsional */
+  height: 430px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.about-images .img-small {
+  position: absolute;
+  bottom: -35px;
+  right: -35px;
+}
+
+.about-images .img-small img {
+  width: 230px;
+  height: 240px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 4px solid var(--white);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* Hover effect */
+.about-images img:hover {
+  transform: scale(1.03);
+  transition: 0.3s ease;
+}
+
+/* 🔸 Responsif untuk layar ponsel */
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 2rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 25px; /* 🔽 lebih rapat di mobile */
+  }
+
+  .about-images {
+    flex-direction: column;
+    position: relative;
+    gap: 20px;
+  }
+
+  .about-images .img-small {
+    position: static;
+    margin: 0;
+  }
+
+  .about-images .img-large img,
+  .about-images .img-small img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+  }
+
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-text h3 {
+    font-size: 1.2rem;
+  }
+}

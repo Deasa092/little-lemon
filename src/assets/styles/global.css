@@ -1,0 +1,175 @@
+:root {
+  --lemon-yellow: #f4ce14;
+  --olive-green: #495e57;
+  --secondary-color: #ee9972;
+  --white: #ffffff;
+  --gray-light: #edefee;
+  --text-dark: #333333;
+}
+
+/* --- Base Layout --- */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  font-family: "Poppins", sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Headings --- */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  color: var(--olive-green);
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--lemon-yellow);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Paragraph --- */
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* --- Links --- */
+a {
+  text-decoration: none;
+  color: var(--olive-green);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--lemon-yellow);
+}
+
+/* --- Button Utilities --- */
+.btn-primary,
+.btn-secondary,
+.btn-secondary-outline {
+  padding: 12px 22px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+/* === Primary Button === */
+.btn-primary {
+  margin-top: 0;
+  background-color: var(--lemon-yellow);
+  color: var(--olive-green);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #e3bd00;
+  text-decoration: underline;
+}
+
+/* === Secondary Button === */
+.btn-secondary {
+  background-color: var(--olive-green);
+  color: var(--white);
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #3e514c;
+  text-decoration: underline;
+}
+
+/* === Secondary Outline Button (optional for popup/cancel) === */
+.btn-secondary-outline {
+  background-color: transparent;
+  color: var(--olive-green);
+  border: 2px solid var(--olive-green);
+}
+
+.btn-secondary-outline:hover {
+  background-color: var(--olive-green);
+  color: var(--white);
+}
+
+/* === Full Width Button (optional for mobile) === */
+.btn-block {
+  width: 100%;
+  display: block;
+}
+
+/* --- Link Button --- */
+.btn-link {
+  color: var(--olive-green);
+  background: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Section --- */
+header footer section {
+  padding: 60px 100px;
+  background-color: var(--white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.error-text {
+  color: #d93025;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  section {
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .btn-block {
+    width: 100%;
+  }
+}
